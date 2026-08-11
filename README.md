@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aadesh Portfolio - Simple Black & White Theme
 
-## Getting Started
-
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies (if not done yet)
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✅ What's Built
 
-## Learn More
+- ✅ Hero section with CTA
+- ✅ Projects showcase (5 projects)
+- ✅ Services section
+- ✅ Pricing section
+- ✅ Contact form + WhatsApp integration
+- ✅ Fully responsive (mobile-first)
+- ✅ Smooth animations
+- ✅ Black & white theme
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Customization Needed
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. Contact Information
+Update in `components/Contact.tsx`:
+- **WhatsApp Number:** Line 32 - Replace `919999999999` with your number
+- **Email:** Line 111 - Replace `aadesh@rizeeweb.com` with your email
 
-## Deploy on Vercel
+### 2. Project Images
+Add project images to `/public/images/`:
+- studio-abd.jpg
+- purplehub.jpg
+- wonders.jpg
+- cheerspace.jpg
+- biospace.jpg
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Email API (Optional)
+Set up actual email sending in `app/api/contact/route.ts`:
+- Install Resend: `npm install resend`
+- Add API key to `.env.local`
+- Uncomment the email sending code
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📱 Mobile Optimization
+
+Already optimized for:
+- Mobile phones (375px+)
+- Tablets (768px+)
+- Desktops (1024px+)
+
+---
+
+## 🚀 Deploy to Vercel
+
+```bash
+# Push to GitHub
+git add .
+git commit -m "Initial commit"
+git push
+
+# Deploy to Vercel
+vercel --prod
+```
+
+Or connect your GitHub repo to Vercel dashboard for automatic deployments.
+
+---
+
+## 🎨 Color Customization
+
+Edit `app/globals.css` and `tailwind.config.ts` to change colors.
+
+Current: Black (#0A0A0A) + White (#FAFAFA)
+
+---
+
+## ✨ Features
+
+- ⚡ Lightning fast (Next.js 15)
+- 📱 Fully responsive
+- 🎨 Smooth animations (Framer Motion)
+- 📧 Contact form
+- 💬 WhatsApp integration
+- 🎯 SEO optimized
+- ♿ Accessible
+
+---
+
+## 📝 TODO Before Launch
+
+- [ ] Update WhatsApp number
+- [ ] Update email address
+- [ ] Add project images
+- [ ] Set up email API (optional)
+- [ ] Test on mobile devices
+- [ ] Deploy to Vercel
+
+---
+
+**Ready to go live! 🚀**
