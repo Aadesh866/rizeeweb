@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
@@ -42,6 +43,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PW85L3SYLR" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PW85L3SYLR');
+          `}
+        </Script>
         <SmoothScroll>
           <CustomCursor />
           <Navigation />

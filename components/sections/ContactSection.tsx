@@ -46,6 +46,15 @@ export default function ContactSection() {
             onSubmit={handleSubmit}
             className="flex flex-col md:flex-row gap-4 justify-center items-stretch mb-8"
           >
+            {/* Honeypot field to catch bots */}
+            <input
+              type="text"
+              name="_honey"
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+            
             <input
               type="text"
               placeholder="What are you building?"
