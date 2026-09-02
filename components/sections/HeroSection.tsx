@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLenis } from "lenis/react";
 import HeroCanvas from "@/components/HeroCanvas";
+import Magnetic from "@/components/Magnetic";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,6 +61,18 @@ export default function HeroSection() {
         delay: 1.0,
         ease: "power2.out",
       });
+
+      // Parallax effect on scroll
+      gsap.to(".hero-content-wrapper", {
+        yPercent: 30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
     },
     { scope: sectionRef }
   );
@@ -87,7 +100,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 pb-20 md:pb-32 pt-40">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 pb-20 md:pb-32 pt-40 hero-content-wrapper">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 w-full">
           <div className="max-w-4xl relative z-10 w-full md:w-3/5">
             <p className="hero-meta text-sm font-[family-name:var(--font-inter)] font-medium uppercase tracking-[0.3em] text-white/70 mb-6">
@@ -113,20 +126,24 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#work"
-                onClick={(e) => handleScrollTo(e, "#work")}
-                className="hero-cta inline-block bg-white text-black px-8 py-4 text-sm font-[family-name:var(--font-inter)] font-medium uppercase tracking-widest hover:bg-[#888] hover:text-white transition-colors text-center"
-              >
-                View My Work
-              </a>
-              <a
-                href="#contact"
-                onClick={(e) => handleScrollTo(e, "#contact")}
-                className="hero-cta inline-block border border-white text-white px-8 py-4 text-sm font-[family-name:var(--font-inter)] font-medium uppercase tracking-widest hover:bg-white hover:text-black transition-colors text-center"
-              >
-                Get a Quote
-              </a>
+              <Magnetic>
+                <a
+                  href="#work"
+                  onClick={(e) => handleScrollTo(e, "#work")}
+                  className="hero-cta inline-block bg-white text-black px-8 py-4 text-sm font-[family-name:var(--font-inter)] font-medium uppercase tracking-widest hover:bg-[#888] hover:text-white transition-colors text-center cursor-pointer"
+                >
+                  View My Work
+                </a>
+              </Magnetic>
+              <Magnetic>
+                <a
+                  href="#contact"
+                  onClick={(e) => handleScrollTo(e, "#contact")}
+                  className="hero-cta inline-block border border-white text-white px-8 py-4 text-sm font-[family-name:var(--font-inter)] font-medium uppercase tracking-widest hover:bg-white hover:text-black transition-colors text-center cursor-pointer"
+                >
+                  Get a Quote
+                </a>
+              </Magnetic>
             </div>
           </div>
 

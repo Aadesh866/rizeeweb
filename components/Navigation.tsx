@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useLenis } from "lenis/react";
+import Magnetic from "./Magnetic";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -62,16 +63,17 @@ export default function Navigation() {
             <Image src="/logo.png" alt="RIZEEWEB" width={150} height={45} className="object-contain" />
           </a>
 
-          <div className="hidden md:flex items-center justify-end gap-6">
+          <div className="hidden md:flex items-center justify-end gap-2">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleScrollTo(e, link.href)}
-                className="nav-link text-[10px] md:text-xs font-[family-name:var(--font-inter)] font-medium uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors"
-              >
-                {link.label}
-              </a>
+              <Magnetic key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={(e) => handleScrollTo(e, link.href)}
+                  className="nav-link text-[10px] md:text-xs font-[family-name:var(--font-inter)] font-medium uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors inline-block px-3 py-2 cursor-pointer"
+                >
+                  {link.label}
+                </a>
+              </Magnetic>
             ))}
           </div>
 

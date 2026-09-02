@@ -29,6 +29,17 @@ export default function AboutSection() {
         ease: "power3.out",
         scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
       });
+
+      gsap.to(".about-image-inner", {
+        yPercent: 15,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
     },
     { scope: sectionRef }
   );
@@ -40,13 +51,15 @@ export default function AboutSection() {
           {/* Photo */}
           <div className="w-full md:w-1/2 flex justify-center md:justify-end about-image">
             <div className="relative w-full max-w-md aspect-square rounded-full overflow-hidden shadow-2xl">
-              <Image
-                src="/about-photo.webp"
-                alt="Aadesh - Freelance Web Developer"
-                fill
-                className="object-cover"
-                sizes="(max-w-768px) 100vw, 50vw"
-              />
+              <div className="about-image-inner absolute inset-[-15%]">
+                <Image
+                  src="/about-photo.webp"
+                  alt="Aadesh - Freelance Web Developer"
+                  fill
+                  className="object-cover"
+                  sizes="(max-w-768px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
 
