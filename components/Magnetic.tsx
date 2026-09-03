@@ -38,5 +38,6 @@ export default function Magnetic({ children }: { children: React.ReactElement })
     };
   }, []);
 
+  // @ts-expect-error TypeScript doesn't easily resolve cloneElement refs with generic ReactElement
   return React.cloneElement(children, { ref });
 }
